@@ -32,7 +32,7 @@ public class MovieController {
    private MovieService movieService;
 
   //  @RequestMapping(method=RequestMethod.GET, value="/movies") 
-    @GetMapping("/movies")
+    @GetMapping("/hackathon")
    public ResponseEntity getAllMovies( )
    {
     	System.out.println("hiiiii");
@@ -42,7 +42,7 @@ public class MovieController {
        return new ResponseEntity<List<MovieModel>>(resultList1, HttpStatus.OK) ;
    }
     
-    @RequestMapping(method=RequestMethod.POST, value="/movies", consumes="application/json")
+    @RequestMapping(method=RequestMethod.POST, value="/hackathon", consumes="application/json")
    public ResponseEntity addTopic(@RequestBody MovieModel movie)
    {
        /*Add validation code*/        
@@ -50,8 +50,8 @@ public class MovieController {
        return new ResponseEntity<String>("New data is created", HttpStatus.OK) ;
        
    }
-    @RequestMapping(method=RequestMethod.DELETE, value="/movies/delete/{id}", consumes="application/json")
-    public ResponseEntity<String> delete(@PathVariable("id") String id)
+    @RequestMapping(method=RequestMethod.DELETE, value="/hackathon/delete/{id}", consumes="application/json")
+    public ResponseEntity<String> delete(@PathVariable("id") String  id)
     {
         /*Add validation code*/        
          movieService.delete(id);

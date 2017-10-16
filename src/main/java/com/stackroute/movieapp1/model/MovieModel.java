@@ -8,45 +8,47 @@ import javax.persistence.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Entity
-@Document(collection="movies")
+@Document(collection="hackathon2")
 public class MovieModel {
 	@Id
 	private String id;
-	private String MovieName;
-	
-	private String Description;
-//	public String getMovieID() {
-//		return id;
-//	}
-//	public void setMovieID(String movieID) {
-//		id = movieID;
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
+	private String username;
+	private String emailid;
 	
-	public String getMovieName() {
-		return MovieName;
+	public String getEmailid() {
+		return emailid;
 	}
-	public void setMovieName(String movieName) {
-		MovieName = movieName;
+	public void setEmailid(String emailid) {
+		this.emailid = emailid;
 	}
-	
-	public String getDescription() {
-		return Description;
+	public String getUsername() {
+		return username;
 	}
-	public void setDescription(String description) {
-		Description = description;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-		public MovieModel(String id, String movieName, String description) {
-	super();
-		this.id = id;
-		MovieName = movieName;
-		Description = description;
+	public MovieModel(String id,String username,String emailid) {
+		super();
+		this.id=id;
+		this.username = username;
+		this.emailid = emailid;
+		
 	}
-public MovieModel()
-{}	
-	
+	public MovieModel() {
+		
+	}
 }
+
+//	private String Description;
+//	public String getMovieID() {
+//		return id;
+//	}
+//	public void setMovieID(String movieID) {
+//		id = movieID;
+	
